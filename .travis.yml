@@ -14,7 +14,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-k8s-255411
   - gcloud config set compute/zone europe-west3
-  - gcloud container cluster get-credentials multi-cluster-1
+  - gcloud container clusters get-credentials multi-cluster-1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t tomekde/docker-react -f ./client/Dockerfile.dev ./client
 script:
